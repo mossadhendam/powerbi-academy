@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Power BI Academy</title>
+<meta name="description" content="Free interactive Power BI reference in Arabic and English: 96 lessons and challenges based on the PL-300 skill areas in Microsoft Learn.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Power BI Academy | أكاديمية Power BI">
+<meta property="og:description" content="96 interactive lessons and challenges, Arabic and English, light and dark. Based on the PL-300 skill areas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📊%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4f7;--card:#fff;--ink:#17181c;--mut:#5d6470;--line:#dde1e8;--y:#f2c811;--b:#0f78d4;--ok:#16794a;--okb:#e3f5ea;--no:#b3261e;--nob:#fde8e6;--bar:#17181c;--bart:#f4f4f4}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#101216;--card:#1a1d23;--ink:#eef0f3;--mut:#9aa3b0;--line:#2b303a;--ok:#5fd195;--okb:#12301f;--no:#ff8a80;--nob:#3a1816;--bar:#0a0b0e;--b:#5aaeff}}
+:root[data-theme=dark]{--bg:#101216;--card:#1a1d23;--ink:#eef0f3;--mut:#9aa3b0;--line:#2b303a;--ok:#5fd195;--okb:#12301f;--no:#ff8a80;--nob:#3a1816;--bar:#0a0b0e;--b:#5aaeff}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "IBM Plex Sans","IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;padding-bottom:env(safe-area-inset-bottom,0px)}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--b);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:var(--bar);color:var(--bart);padding-top:env(safe-area-inset-top,0px)}
+.top{display:flex;align-items:center;gap:12px;padding:10px 16px}
+.logo{display:flex;align-items:flex-end;gap:3px;height:26px}
+.logo i{display:block;width:6px;background:var(--y);border-radius:1px}
+.logo i:nth-child(1){height:10px}.logo i:nth-child(2){height:18px}.logo i:nth-child(3){height:26px}
+.brand{font-weight:700;font-size:18px;flex:1}
+.pill{font-size:13px;background:#ffffff1f;border-radius:99px;padding:3px 12px;white-space:nowrap}
+.tool{background:#ffffff1f;border:0;border-radius:8px;color:inherit;padding:4px 10px;font-size:13px}
+.strip{display:flex;gap:4px;overflow-x:auto;padding:0 12px;scrollbar-width:thin}
+.strip button{flex:none;border:0;background:none;color:#c9ced8;padding:9px 14px;border-bottom:3px solid transparent;font-size:15px;white-space:nowrap}
+.strip button.on{color:#fff;border-color:var(--y);font-weight:700}
+#sub{background:var(--card);border-bottom:1px solid var(--line)}
+#sub button{color:var(--mut);font-size:13px;padding:7px 11px;border-bottom:2px solid transparent}
+#sub button.on{color:var(--ink);border-color:var(--b);font-weight:700}
+#sub button.done::after{content:" ✓";color:var(--ok)}
+main{max-width:860px;margin:0 auto;padding:22px 16px 60px}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.25;margin:6px 0 10px}
+h2{font-size:clamp(21px,3.5vw,28px);margin:0 0 6px;line-height:1.3}
+.tag{display:inline-block;font-size:13px;color:var(--mut);margin-bottom:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pc{text-align:start;background:var(--card);border:1px solid var(--line);border-inline-start:6px solid var(--y);border-radius:10px;padding:14px 16px}
+.pc:hover{border-color:var(--b);border-inline-start-color:var(--y)}
+.pc b{display:block;font-size:17px}.pc span{font-size:14px;color:var(--mut)}
+.btn{background:var(--y);color:#17181c;border:0;border-radius:8px;padding:9px 20px;font-weight:700}
+.btn.g{background:none;border:1px solid var(--line);color:var(--ink);font-weight:500}
+.q{background:var(--card);border:1px solid var(--line);border-inline-start:6px solid var(--b);border-radius:10px;padding:16px 18px;margin:18px 0}
+.q>b{display:block;margin-bottom:10px}
+.q button.o{display:block;width:100%;text-align:start;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 14px;margin:7px 0}
+.q button.o:not(:disabled):hover{border-color:var(--b)}
+.q button.ok{background:var(--okb);border-color:var(--ok);color:var(--ok);font-weight:700}
+.q button.no{background:var(--nob);border-color:var(--no);color:var(--no)}
+.fb{font-size:14px;margin-top:6px;color:var(--mut)}
+.pager{display:flex;justify-content:space-between;margin-top:20px}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--y);width:0;transition:width .4s}
+.res{font-size:22px;font-weight:700}
+#pr{display:none}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:10px 16px 30px}
+@media print{header,main,footer{display:none!important}#pr{display:block}body{background:#fff;color:#000;font-size:12px}.pt{display:block;font-size:20px;font-weight:700;border-bottom:3px solid #f2c811;margin:22px 0 8px;break-before:page}.pi{break-inside:avoid;margin:10px 0;border-bottom:1px solid #ccc;padding-bottom:6px}.pi h3{margin:0}.pi p{margin:2px 0}.pi ol{margin:2px 0;padding-inline-start:20px}}
+html[lang=ar] body{line-height:1.95}.brand{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media(max-width:520px){.brand{font-size:15px}.top{gap:8px;padding:8px 12px}.tool{padding:4px 8px}}@page{margin:14mm}</style>
+</head>
+<body>
+<header>
+ <div class="top"><div class="logo"><i></i><i></i><i></i></div><div class="brand" id="brand"></div><span class="pill" id="prog">0 / 96</span><button class="tool" id="lg" aria-label="Language"></button><button class="tool" id="th" aria-label="Theme">🌓</button><button class="tool" id="pdf"></button></div>
+ <nav class="strip" id="main"></nav>
+ <nav class="strip" id="sub"></nav>
+</header>
+<main id="box"></main>
+<div id="pr"></div>
+<footer id="foot"></footer>
+<script>
+const parse=a=>a.map(p=>({...p,t:p.t.trim().split('\n').map(l=>{const a=l.split('|');return{h:a[0],x:a[1],q:a[2].split('~')[0],o:a[2].split('~').slice(1),c:+a[3]}})}));
+const D={ar:parse([
+{n:'تجهيز البيانات',w:'25–30%',d:'الاتصال بالمصادر وتنظيف البيانات وتحويلها في Power Query.',t:`مصادر البيانات|يتصل Power BI بملفات (Excel وCSV) وقواعد بيانات (SQL) وخدمات ويب عبر Get Data، ثم يجمعها في نموذج واحد.|عميلك يملك ملف Excel ونظام SQL وصفحة ويب. كم تقريراً مستقلاً تحتاج لعرضها معاً؟~ثلاثة تقارير~تقرير واحد يجمعها~لا يمكن الدمج|1
+Import أم DirectQuery|Import ينسخ البيانات إلى النموذج (سريع جداً). DirectQuery يترك البيانات في مصدرها ويرسل استعلاماً مع كل تفاعل (أحدث لكن أبطأ).|🕵️ تحتاج أرقاماً لحظية من قاعدة ضخمة لا يجوز نسخها. أي وضع تختار؟~Import~DirectQuery~Excel فقط|1
+النموذج المركب|وضع Composite يجمع جداول Import وجداول DirectQuery في نموذج واحد.|أي عبارة صحيحة؟~كل النموذج يجب أن يكون بوضع واحد~جدول المبيعات DirectQuery وجدول المنتجات Import معاً ممكن~Composite خاص بالتقارير المطبوعة|1
+الاتصال الحي|الاتصال بنموذج دلالي منشور (Semantic model) لبناء تقارير عليه دون إنشاء نموذج جديد، فيبقى مصدراً واحداً للحقيقة.|عشرة محللين يبنون تقارير على نموذج الشركة الموثوق. ما الأنسب لتجنب عشر نسخ مختلفة؟~كل واحد يستورد البيانات~الاتصال بالنموذج المنشور~تبادل ملفات pbix|1
+محرر Power Query|كل تحويل يُسجَّل كخطوة في Applied Steps وتُعاد تلقائياً عند كل تحديث، فلا تنظّف يدوياً مرتين.|غداً يصل ملف جديد بنفس الشكل. ماذا يحدث لخطوات تنظيفك؟~تُعاد تلقائياً عند التحديث~تُحذف~تحتاج تنفيذاً يدوياً|0
+لغة M|خلف كل خطوة كود بلغة M. يمكنك قراءته وتعديله من Advanced Editor.|🔎 أين ترى كود M الكامل لاستعلام؟~Advanced Editor~Model view~Report view|0
+تحليل الجودة|Column quality وdistribution وprofile تكشف الأخطاء والفراغات والقيم الفريدة. التحليل الافتراضي يعتمد على أول 1000 صف فقط.|عمود يبدو نظيفاً وفيه خطأ في الصف 50000 لم تره. التفسير الأرجح؟~Power BI لا يكشف الأخطاء~الفحص الافتراضي يغطي أول 1000 صف~العمود مخفي|1
+أنواع البيانات|النوع الصحيح (رقم، تاريخ، نص) يحدد الفرز والحساب والعلاقات.|الرقم 10 يظهر قبل 2 عند الفرز. المتهم الأول؟~العمود نوعه نص~لون الخلفية~حجم الشاشة|0
+الرؤوس والصفوف|Use First Row as Headers ترفع الصف الأول ليصبح أسماء أعمدة، وRemove Top Rows تحذف أسطراً زائدة قبل الجدول.|ملفك يبدأ بشعار وثلاثة أسطر عنوان قبل الجدول. أول خطوتين منطقيتان؟~حذف الصفوف العلوية ثم رفع الصف الأول كرؤوس~Pivot ثم Merge~حذف الملف|0
+التكرار والفراغات|Remove Duplicates يحذف الصفوف المتطابقة في الأعمدة المحددة، وReplace Values وRemove Empty تعالج الفراغات.|إذا حددت عمود «رقم العميل» فقط ثم Remove Duplicates فماذا يبقى؟~صف واحد لكل رقم عميل~كل الصفوف~لا شيء|0
+تقسيم الأعمدة|Split Column يقسم النص بفاصل أو بعدد أحرف، مثل فصل المدينة عن الدولة.|الخلية «الرياض-السعودية». أي فاصل تستخدم لفصل المدينة؟~الشرطة (-)~المسافة فقط~لا يمكن|0
+دمج الأعمدة|Merge Columns يجمع عمودين أو أكثر بفاصل تختاره في عمود جديد.|لدمج الاسم الأول والأخير بمسافة بينهما تحتاج؟~Merge Columns مع فاصل مسافة~Append~Unpivot|0
+Unpivot|يحوّل أعمدة مثل (يناير، فبراير…) إلى عمودين: الشهر والقيمة، وهو الشكل المناسب للتحليل الزمني.|جدول فيه عمود لكل شهر ويصعب رسم الاتجاه عبر الزمن. الحل؟~Pivot~Unpivot Columns~حذف الأعمدة|1
+Pivot|عكس Unpivot: يحوّل قيم عمود إلى أعمدة مع تجميع قيمة محددة.|تريد تحويل (منتج، قيمة) إلى عمود لكل منتج. ماذا تستخدم؟~Pivot Column~Unpivot~Split|0
+Append|Append يضيف صفوف جدول تحت آخر (تكديس عمودي) عند تطابق الأعمدة.|مبيعات الربع الأول والثاني في جدولين بنفس الأعمدة. الدمج؟~Append Queries~Merge Queries~Pivot|0
+Merge|Merge Queries يضيف أعمدة من جدول آخر عبر عمود مفتاح، ويشبه JOIN في SQL.|تريد كل عملاء الجدول الأول ولو لم يكن لهم طلبات. نوع الربط؟~Inner~Left Outer~Right Anti|1
+الدمج من مجلد|موصل Folder يدمج عشرات الملفات المتشابهة تلقائياً ويضم أي ملف جديد يوضع في المجلد.|ملف مبيعات جديد كل شهر في المجلد نفسه. الأذكى؟~الاتصال بالمجلد~نسخ الملفات يدوياً كل مرة~تحويلها صوراً|0
+Query Folding|دفع خطوات التحويل إلى المصدر ليُنفذها هناك، فيقل ما يُسحب من بيانات ويزيد الأداء.|كيف تتحقق أن خطوة تُنفَّذ في المصدر؟~لون الخطوة~View Native Query متاح~حجم الملف|1
+Reference وDuplicate|Reference يبني استعلاماً فوق ناتج الأصل (يتأثر بتغييره)، وDuplicate ينسخ كل خطواته منفصلة.|تريد أن يتغير الاستعلام الفرعي تلقائياً حين يتغير الأصل. أيهما؟~Reference~Duplicate~لا فرق|0
+المعاملات Parameters|قيم قابلة للتغيير (خادم، مسار، تاريخ بدء) تستخدمها في الاستعلامات دون تعديل الكود.|ينقلون ملفاتك من مسار تطوير إلى إنتاج. كيف تتجنب تعديل كل استعلام؟~معامل للمسار~نسخ الاستعلامات~تجاهل المشكلة|0
+Dataflows|تحضير بيانات بـ Power Query Online داخل الخدمة، لإعادة استخدام نفس التنظيف في عدة نماذج.|خمسة تقارير تحتاج نفس تنظيف جدول العملاء. أين تنظّفه مرة واحدة؟~داخل كل تقرير~Dataflow~Excel|1
+معالجة الأخطاء|Replace Errors تستبدل الأخطاء بقيمة، وKeep Errors تعرض الصفوف الخاطئة لتفحصها قبل إصلاحها.|⚖️ قبل أن تُخفي الأخطاء، الأفضل أن…~تفحصها بـ Keep Errors لتعرف سببها~تحذفها دون نظر~تتجاهلها|0
+مستويات الخصوصية|Public وOrganizational وPrivate تمنع تسريب بيانات مصدر إلى مصدر آخر عند الدمج.|دمج جدول رواتب حساس مع مصدر عام. المستوى المناسب للرواتب؟~Public~Private~لا حاجة|1
+عمود من أمثلة|Column From Examples: تكتب أمثلة للناتج فيستنتج Power BI القاعدة بنفسه.|لا تعرف الصيغة لاستخراج الشهر من نص تاريخ. أسرع طريق؟~Column From Examples~الكتابة بالقلم~حذف العمود|0`},
+{n:'نمذجة البيانات',w:'25–30%',d:'تصميم النموذج والعلاقات وكتابة DAX وتحسين الأداء.',t:`المخطط النجمي|جدول حقائق في الوسط (مبيعات) تحيط به جداول أبعاد (منتج، عميل، تاريخ). هو التصميم الأمثل لـ Power BI.|بدل جدول واحد ضخم بـ 80 عموداً، أفضل تصميم؟~Star schema~جدول واحد دائماً~بلا علاقات|0
+حقائق وأبعاد|الحقائق أرقام وأحداث (كمية، مبلغ) والأبعاد وصف (اسم منتج، مدينة).|🧩 الدخيل: أي عمود من نوع «حقائق»؟~اسم المنتج~مبلغ البيع~مدينة العميل|1
+العلاقات|علاقة واحد-إلى-متعدد: القيم فريدة في جانب الأبعاد (1) ومكررة في الحقائق (*)، وتنتقل التصفية من الأبعاد إلى الحقائق.|من يُفترض أن يكون جانب «الواحد»؟~جدول المنتجات بمفتاح فريد~جدول المبيعات~أي جدول|0
+متعدد إلى متعدد|يحدث حين لا يكون المفتاح فريداً في أي جانب، وقد يعطي نتائج مربكة، ويُفضَّل تجنبه بجدول وسيط.|الحل الأنظف لعلاقة many-to-many؟~جدول وسيط بقيم فريدة~تجاهلها~حذف الجدول|0
+اتجاه التصفية|Single يمرر التصفية في اتجاه واحد، وBoth في اتجاهين لكنها قد تسبب غموضاً وبطئاً.|متى تتردد قبل تفعيل Both؟~لأنها قد تسبب غموضاً وبطئاً~لأنها ممنوعة~لا شيء يحدث|0
+علاقة غير نشطة|بين جدولين علاقة نشطة واحدة فقط، والباقي غير نشط ويُفعَّل داخل measure عبر USERELATIONSHIP.|جدول المبيعات فيه تاريخ طلب وتاريخ شحن مرتبطان بجدول التاريخ نفسه. كم علاقة نشطة تقبل؟~واحدة~اثنتان~بلا حد|0
+أبعاد متعددة الأدوار|جدول تاريخ واحد يؤدي دور تاريخ الطلب والشحن معاً، بعلاقات نشطة وغير نشطة.|هل تكفي نسخة واحدة من جدول التاريخ لتحليل الطلب والشحن؟~نعم عبر علاقة غير نشطة وUSERELATIONSHIP~لا أبداً~فقط بـ DirectQuery|0
+جدول التاريخ|يلزم لدوال الذكاء الزمني، وتنشئه بـ CALENDAR أو CALENDARAUTO ثم تضبطه Mark as date table. المهم أن تكون التواريخ متصلة بلا فجوات.|دوال الزمن تفشل رغم وجود جدول تاريخ ناقص الأيام. السبب؟~تحتاج تواريخ متصلة~تحتاج إنترنت~تحتاج Premium|0
+إخفاء الحقول|إخفاء الأعمدة التقنية (مفاتيح، أعمدة وسيطة) يبسّط الحقول لمن يبني التقارير.|ما فائدة إخفاء عمود المفتاح CustomerID؟~حذف البيانات~تقليل التشويش على منشئ التقارير~تسريع الإنترنت|1
+عمود محسوب أم Measure|العمود المحسوب يُحسب عند التحديث ويُخزَّن لكل صف. الـ measure يُحسب لحظة العرض حسب سياق التصفية.|مجموع الأرباح يجب أن يتغير مع الفلاتر. ماذا تستخدم؟~Measure~عموداً محسوباً~قيمة ثابتة|0
+سياق الصف والتصفية|Row context يعمل صفاً صفاً (الأعمدة المحسوبة والمكررات)، وFilter context يأتي من الفلاتر والمرئيات والـ slicers.|🔎 أي سياق يتغير حين تنقر عموداً في رسم؟~Filter context~Row context~لا سياق|0
+CALCULATE|تعدّل سياق التصفية: CALCULATE([Total Sales], Region[Name]="Gulf") تحسب المبيعات لهذه المنطقة فقط.|أي دالة تغيّر الفلتر لقياس واحد؟~CALCULATE~SUM~COUNT|0
+ALL|ALL تزيل الفلاتر، فتُستخدم لحساب النسبة من الإجمالي: DIVIDE([Sales], CALCULATE([Sales], ALL(Product))).|مقام «النسبة من الإجمالي» يجب أن…~يتجاهل فلتر المنتج~يتأثر بكل فلتر~يساوي صفراً|0
+SUMX|دالة تكرارية: تمر على كل صف وتحسب تعبيراً ثم تجمع، مثل SUMX(Sales, Sales[Qty]*Sales[Price]).|لا يوجد عمود «إجمالي السطر». كيف تحسب مجموع الكمية × السعر؟~SUMX~SUM وحدها~COUNT|0
+DIVIDE|DIVIDE تقسم بأمان وتعيد BLANK أو قيمة بديلة عند القسمة على صفر بدل الخطأ.|أيهما أفضل عند احتمال مقام صفر؟~الشرطة /~DIVIDE~لا فرق|1
+الذكاء الزمني|دوال مثل TOTALYTD وSAMEPERIODLASTYEAR تحتاج جدول تاريخ صحيحاً.|لمقارنة هذا الشهر بنفس الشهر من العام الماضي؟~SAMEPERIODLASTYEAR~TOTALYTD~ALL|0
+VAR وRETURN|تخزين نتيجة وسيطة باسم، فيصير الكود أوضح وتُحسب القيمة مرة واحدة.|ما فائدة VAR؟~توضيح الكود وتقليل التكرار~حذف البيانات~إخفاء الجدول|0
+ضمني أم صريح|الضمني: سحب عمود رقمي ويجمعه Power BI تلقائياً. الصريح: measure تكتبه بنفسك، أفضل للتحكم وإعادة الاستخدام.|تريد استخدام قياس المبيعات نفسه في 20 رسماً. الأفضل؟~Explicit measure~سحب العمود كل مرة~Excel|0
+التسلسل الهرمي|Hierarchy (سنة > ربع > شهر) تتيح التنقل Drill down في المرئيات.|ما الذي يسهّل النزول من سنة إلى شهر في المرئي؟~Hierarchy~قيم نصية~مخطط دائري فقط|0
+فئات البيانات|Data category مثل City أو Country تساعد على رسم الخرائط بدقة.|لماذا تضبط عمود الدولة كـ Country؟~ليتعرف عليه Power BI في الخرائط~ليزداد حجم الملف~للأمان|0
+الفرز بعمود|Sort by column تجعل أسماء الأشهر تُفرز بترتيب رقم الشهر لا ألفبائياً.|بلا هذا الإعداد وبأسماء إنجليزية، أي شهر يظهر أولاً؟~April~January~March|0
+Quick measures|قوالب جاهزة لحسابات شائعة (YTD، المتوسط المتحرك) تولّد كود DAX.|فائدة غير مباشرة لـ Quick measure؟~تُظهر كود DAX جاهزاً للتعلم~تحذف الأخطاء~تنشئ التقارير|0
+Performance Analyzer|أداة في Desktop تقيس زمن كل مرئي: DAX وعرض وغيرهما، لاكتشاف البطء.|رسم يتباطأ. بماذا تبدأ التشخيص؟~Performance Analyzer~حذف التقرير~تغيير الألوان|0
+تقليل الحجم|حذف الأعمدة غير اللازمة وتقليل الكاردينالية (مثل فصل التاريخ عن الوقت) يضغط النموذج ويسرّعه.|أي عمود يضخّم النموذج أكثر؟~قيم فريدة كثيرة (دقيقة بدقيقة)~قيم مكررة قليلة التنوع~لا فرق|0`},
+{n:'التصور والتحليل',w:'25–30%',d:'اختيار المرئيات الأنسب وبناء تقارير تفاعلية وتحليلات ذكية.',t:`اختيار المرئي|الخط للاتجاه عبر الزمن، الأعمدة للمقارنة بين فئات، البطاقة لرقم واحد مهم.|تريد عرض تطور المبيعات شهرياً لسنتين. الأنسب؟~Line chart~Pie chart~Card|0
+أعمدة أم أشرطة|الأشرطة الأفقية تناسب أسماء الفئات الطويلة، والأعمدة تناسب عدداً قليلاً من الفئات.|لديك 15 اسم منتج طويلاً. الأفضل؟~Clustered bar (أفقي)~Pie~Gauge|0
+حذر الدائري|الدائري يصعّب المقارنة عند كثرة الشرائح، ويصلح لنسب بسيطة من 2–5 أجزاء.|⚖️ متى يكون الدائري مقبولاً؟~12 شريحة متقاربة~حتى 5 أجزاء متفاوتة~للاتجاه الزمني|1
+البطاقة وKPI|Card يعرض رقماً واحداً، وKPI يقارن القيمة بهدف ويُظهر الاتجاه.|تريد المبيعات مقابل الهدف مع مؤشر الاتجاه. الأنسب؟~KPI~Table~Slicer|0
+الجدول والمصفوفة|Table صفوف مسطحة، وMatrix يدعم صفوفاً وأعمدة وتسلسلاً هرمياً (يشبه PivotTable).|تريد المنتجات في الصفوف والأشهر في الأعمدة. الأنسب؟~Matrix~Card~Pie|0
+القطاعات Slicers|Slicer يصفّي الصفحة، وSync slicers تمرر الاختيار نفسه عبر عدة صفحات.|اخترت منطقة في الصفحة 1 وتريدها ثابتة في الصفحة 2. الحل؟~Sync slicers~حذف الصفحة~Drillthrough|0
+مستويات الفلاتر|الفلتر على مرئي واحد أو على صفحة أو على كل التقرير من Filters pane.|فلتر «السنة = 2025» لكل صفحات التقرير. أي مستوى؟~Visual level~Page level~Report level|2
+Drill down وDrillthrough|Drill down ينزل لمستوى أدق في المرئي ذاته. Drillthrough ينقلك لصفحة تفاصيل مع الاحتفاظ بالسياق المختار.|🕵️ ينقر المدير «الرياض» ليرى صفحة تفاصيلها كاملة. أي ميزة؟~Drillthrough~Sync slicers~Themes|0
+تلميحات مخصصة|Report page tooltip تعرض صفحة مصغرة عند تمرير الماوس على مرئي.|تريد رسماً صغيراً يظهر عند المرور على عمود. الحل؟~Tooltip page~Bookmark~Slicer|0
+الإشارات والأزرار|Bookmarks تحفظ حالة العرض (فلاتر، إخفاء) والأزرار تنقل بينها لتجارب تفاعلية.|التبديل بين عرض الأرباح والتكاليف بزرين دون صفحة جديدة؟~Bookmarks + Buttons~Merge~DirectQuery|0
+التنسيق الشرطي|تلوين الخلايا أو الأشرطة حسب قيمة أو قاعدة أو measure.|تريد أن تحمرّ خلية المبيعات الأقل من الهدف. الأداة؟~Conditional formatting~Append~Unpivot|0
+Edit interactions|تتحكم هل يصفّي مرئي مرئياً آخر أو يبرزه أو لا يؤثر فيه.|لا تريد أن يؤثر الرسم الأول في الثاني. ماذا تغيّر؟~Edit interactions~علاقات الجداول~حجم الصفحة|0
+السمات Themes|ملف JSON يوحّد الألوان والخطوط عبر التقارير لهوية بصرية واحدة.|لتوحيد ألوان شركتك في 30 تقريراً؟~استيراد Theme JSON~تلوين يدوي~تغيير الشاشة|0
+Field parameters|تتيح للمستخدم اختيار الحقل أو المقياس الذي يعرضه المرئي عبر slicer.|مستخدم يريد التبديل بين المبيعات والربح في الرسم نفسه؟~Field parameter~حذف الرسم~Gateway|0
+الخرائط|Map وFilled map وShape map تعرض البيانات الجغرافية وتحتاج فئات بيانات صحيحة.|ما الذي يحسّن دقة الخريطة لأسماء المدن؟~ضبط Data category على City~لا شيء~استخدام Pie|0
+Decomposition tree|يفكك رقماً إلى عوامل بالتتابع، ويمكنك اختيار الفرع بنفسك أو استخدام AI splits.|تريد تفكيك انخفاض المبيعات حسب منطقة ثم منتج بنفسك. الأنسب؟~Decomposition tree~Card~Gauge|0
+Key influencers|يحلل العوامل المؤثرة في نتيجة معينة (مثل إلغاء الاشتراك).|🔎 لماذا يلغي العملاء الاشتراك؟ أي مرئي ذكي؟~Key influencers~Slicer~Shape|0
+Q&A|تكتب سؤالاً بلغة طبيعية مثل «المبيعات حسب الدولة» فيرسم المرئي المناسب.|تريد أن يسأل المستخدم نصياً عن البيانات. أي مرئي؟~Q&A~Matrix~Treemap|0
+Smart narrative|يولّد ملخصاً نصياً ديناميكياً يتغير مع الفلاتر.|تريد جملة تلخص الاتجاه وتتحدث تلقائياً مع التصفية؟~Smart narrative~Text box ثابت~Image|0
+تحليلات Analytics|من Analytics pane تضيف خط اتجاه وتوقعاً Forecast وخطوط متوسط ومرجع.|ماذا تضيف لتتوقع الأشهر القادمة؟~Forecast في Analytics pane~Slicer~Theme|0
+كشف الشواذ|Anomaly detection في الرسم الخطي يبرز نقاطاً شاذة ويقترح أسباباً محتملة.|قفزة غير متوقعة في مبيعات يوم. ماذا تفعل؟~تفعيل Find anomalies~حذف اليوم~تلوين الرسم|0
+إمكانية الوصول|Alt text وTab order وتباين الألوان تجعل التقرير مفهوماً لقارئ الشاشة وللجميع.|ما الذي يفيد مستخدم قارئ الشاشة؟~Alt text للمرئيات~زيادة الرسوم~حذف العناوين|0
+تقارير الجوال|Mobile layout view تعيد ترتيب المرئيات لشاشة الهاتف العمودية.|أغلب مستخدميك على الهاتف. ماذا تصمم؟~Mobile layout~Dashboard فقط~لا شيء|0
+لوحة أم تقرير|Report: عدة صفحات تفاعلية. Dashboard: صفحة واحدة في الخدمة من مرئيات مثبّتة (Pin) من تقارير متعددة.|⚖️ صفحة واحدة تجمع مرئيات مثبتة من عدة تقارير؟~Dashboard~Report~لا شيء|0`},
+{n:'إدارة وتأمين',w:'15–20%',d:'النشر والتحديث والصلاحيات والأمان والحوكمة في Power BI Service.',t:`مساحات العمل|Workspace مكان تعاوني في الخدمة يضم تقارير ونماذج دلالية ولوحات.|أين تعمل فرقك على تقارير مشتركة؟~Workspace~Desktop فقط~Excel|0
+أدوار المساحة|Admin وMember وContributor وViewer بصلاحيات متدرجة؛ Viewer للقراءة فقط.|من يعدّل المحتوى لكنه لا يدير الأعضاء؟~Contributor~Admin~Viewer|0
+التطبيقات Apps|توزّع محتوى منقّحاً للمستهلكين دون منحهم وصولاً لمساحة العمل.|500 مستخدم يحتاجون التقارير النهائية دون تعديل. الأنسب؟~نشر App~جعلهم Admin~إرسال pbix|0
+مشاركة أم تطبيق|المشاركة المباشرة سريعة لعنصر واحد، والتطبيق أفضل لتوزيع منظم لمجموعة تقارير.|لإرسال تقرير واحد لزميل بسرعة؟~Share~App~Pipeline|0
+النموذج الدلالي|Semantic model هو الاسم الحديث لـ Dataset: البيانات والعلاقات والقياسات خلف التقارير.|ما الاسم الحديث لـ Dataset؟~Semantic model~Dataflow~Gateway|0
+التحديث المجدول|Scheduled refresh يحدّث بيانات Import. الحد اليومي حتى 8 مرات في Pro و48 في Premium.|كم تحديثاً مجدولاً أقصى يومياً في Pro؟~8~48~100|0
+البوابة Gateway|جسر آمن لتحديث مصادر محلية (on-premises) من الخدمة السحابية.|مصدرك SQL داخل شبكة الشركة وتريد تحديثاً مجدولاً في الخدمة؟~On-premises data gateway~لا يلزم شيء~DirectQuery لا غير|0
+التحديث التزايدي|يحدّث الجزء الحديث فقط من بيانات ضخمة ويحتفظ بالقديم دون إعادة تحميله.|جدول 5 سنوات لا يتغير إلا آخر أيامه. الأذكى؟~Incremental refresh~تحديث الكل كل مرة~حذف القديم|0
+RLS الثابت|Row-level security يقيّد الصفوف حسب دور بفلتر DAX مثل [Region] = "Gulf".|هل يرى مدير الخليج صفوف أوروبا؟~لا، إذا طُبّق دور الخليج~نعم دائماً~لا يتغير شيء|0
+RLS الديناميكي|دور واحد بفلتر USERPRINCIPALNAME() يطابق بريد المستخدم بجدول صلاحيات.|بدل 50 دوراً لـ 50 مديراً؟~دور ديناميكي بـ USERPRINCIPALNAME~50 تقريراً~Export|0
+View as|تختبر الدور في Desktop أو الخدمة قبل النشر لتعرف ما يراه المستخدم.|قبل نشر RLS كيف تتحقق؟~View as role~التخمين~حذف الدور|0
+فخ RLS|لا يُطبَّق RLS على من يملك دور Admin أو Member أو Contributor في المساحة؛ يُطبَّق على Viewer.|🕵️ مدير فريق (Member) يرى كل البيانات رغم RLS. السبب؟~دوره في المساحة يتجاوز RLS~خطأ في DAX~الإنترنت|0
+OLS|Object-level security تخفي جدولاً أو عموداً كاملاً (مثل الراتب) عن دور.|تريد إخفاء عمود «الراتب» نفسه لا الصفوف. المناسب؟~OLS~RLS~Slicer|0
+Sensitivity labels|تصنيف حساسية (سري، عام) يتبع المحتوى ويطبق سياسات حماية من Microsoft Purview.|تريد وسم تقرير بأنه «سري» ويتبعه عند التصدير؟~Sensitivity label~Theme~Bookmark|0
+Endorsement|Promoted وCertified يميزان المحتوى الموثوق؛ Certified يتطلب مفوّضين معتمدين.|محتوى معتمد رسمياً من مسؤولين؟~Certified~Promoted وحده~Hidden|0
+Lineage view|تعرض السلسلة: مصدر > Dataflow > نموذج > تقرير، وتكشف أثر أي تعديل.|قبل تعديل نموذج، كيف تعرف التقارير المتأثرة؟~Lineage view وImpact analysis~التخمين~حذفه|0
+Deployment pipelines|ترقية المحتوى بين Development وTest وProduction بأمان.|كيف تنقل تغييراتك للاختبار ثم الإنتاج؟~Deployment pipeline~نسخ ولصق~البريد|0
+الاشتراكات|Subscriptions ترسل لقطة من التقرير بالبريد حسب جدول.|مدير يريد لقطة كل صباح بالبريد؟~Subscription~Gateway~Merge|0
+تنبيهات البيانات|Data alerts على بطاقات ومقاييس مثبتة في Dashboard ترسل إشعاراً عند تجاوز حد.|تنبيه عند هبوط المبيعات تحت حد. أين؟~Dashboard tile~Power Query~Theme|0
+التراخيص|Free وPro وPremium Per User وسعات Fabric/Premium، وتختلف في المشاركة وحدود التحديث.|مشاركة التقارير مع آخرين تحتاج غالباً؟~ترخيصاً مناسباً (Pro أو PPU أو سعة)~لا شيء~Excel|0
+Usage metrics|تقرير استخدام يخبرك من يفتح تقاريرك وكم مرة.|كيف تعرف أن تقريراً لا يُستخدم؟~Usage metrics~التجربة~التخمين|0
+قالب pbit|ملف قالب .pbit يحتفظ بالبنية والاستعلامات دون البيانات ويطلب المعاملات عند فتحه.|تريد قالباً يوزع على الفريق بلا بيانات؟~pbit~pbix~csv|0
+Analyze in Excel|يتصل بنموذج دلالي في الخدمة لبناء PivotTables في Excel.|محاسب يحب Excel ويريد استخدام نموذجك؟~Analyze in Excel~Import CSV~تجاهله|0
+Git وFabric|Git integration يتتبع الإصدارات، وMicrosoft Fabric منصة بيانات موحدة يضم Power BI.|لتتبع إصدارات التقرير مثل المبرمجين؟~Git integration~Gateway~Dashboard|0`}
+]),en:parse([
+{n:'Prepare the Data',w:'25–30%',d:'Connect to sources, then clean and transform data in Power Query.',t:`Data sources|Power BI connects to files (Excel, CSV), databases (SQL), and web services through Get Data, then combines them in one model.|Your client has an Excel file, a SQL system, and a web page. How many separate reports do you need to show them together?~Three reports~One report that combines them~It is not possible to combine them|1
+Import or DirectQuery|Import copies data into the model (very fast). DirectQuery leaves data at the source and sends a query on every interaction (fresher, but slower).|🕵️ You need live numbers from a huge database that must not be copied. Which mode do you choose?~Import~DirectQuery~Excel only|1
+Composite model|A Composite model mixes Import tables and DirectQuery tables in one model.|Which statement is true?~The whole model must use one mode~Sales can be DirectQuery while Products is Import~Composite is only for printed reports|1
+Live connection|Connect to a published semantic model and build reports on it without creating a new model. It stays the single source of truth.|Ten analysts build reports on the trusted company model. What avoids ten different copies?~Everyone imports the data~Connect to the published model~Share pbix files|1
+Power Query Editor|Every transform is saved as a step in Applied Steps and replayed on every refresh, so you never clean the same data twice.|A new file with the same layout arrives tomorrow. What happens to your cleaning steps?~They replay automatically on refresh~They are deleted~You must redo them by hand|0
+The M language|Behind every step is M code. You can read and edit it in the Advanced Editor.|🔎 Where do you see the full M code of a query?~Advanced Editor~Model view~Report view|0
+Data profiling|Column quality, distribution, and profile show errors, empty values, and unique values. By default, profiling uses only the first 1,000 rows.|A column looks clean, but row 50,000 has an error you never saw. Most likely reason?~Power BI cannot detect errors~Default profiling covers only the first 1,000 rows~The column is hidden|1
+Data types|The right type (number, date, text) controls sorting, calculation, and relationships.|The number 10 sorts before 2. Prime suspect?~The column type is text~Background color~Screen size|0
+Headers and rows|Use First Row as Headers turns the first row into column names. Remove Top Rows deletes extra lines above the table.|Your file starts with a logo and three title lines above the table. What are the first two logical steps?~Remove top rows, then use first row as headers~Pivot, then Merge~Delete the file|0
+Duplicates and blanks|Remove Duplicates deletes identical rows based on the selected columns. Replace Values and Remove Empty handle blanks.|If you select only the CustomerID column and Remove Duplicates, what remains?~One row per customer ID~All rows~Nothing|0
+Split columns|Split Column breaks text by a delimiter or a number of characters, for example city and country.|The cell says "Riyadh-Saudi Arabia". Which delimiter splits out the city?~The dash (-)~Space only~It cannot be split|0
+Merge columns|Merge Columns joins two or more columns into a new one with a separator you choose.|To join first and last name with a space between them, you need?~Merge Columns with a space separator~Append~Unpivot|0
+Unpivot|Turns columns such as Jan, Feb… into two columns: Month and Value. This is the right shape for time analysis.|A table has one column per month, and trends over time are hard to plot. The fix?~Pivot~Unpivot Columns~Delete the columns|1
+Pivot|The opposite of Unpivot: it turns the values of a column into columns, aggregating a chosen value.|You want to turn (Product, Value) into one column per product. What do you use?~Pivot Column~Unpivot~Split|0
+Append|Append stacks the rows of one table under another when the columns match.|Q1 and Q2 sales are in two tables with the same columns. How do you combine them?~Append Queries~Merge Queries~Pivot|0
+Merge|Merge Queries adds columns from another table through a key column. It works like JOIN in SQL.|You want every customer in the first table, even those with no orders. Which join type?~Inner~Left Outer~Right Anti|1
+Combine from a folder|The Folder connector combines dozens of similar files automatically and picks up any new file dropped into the folder.|A new sales file lands in the same folder each month. What is the smartest approach?~Connect to the folder~Copy files by hand each time~Turn them into images|0
+Query folding|Pushes your transform steps back to the source so it runs them there. Less data moves and performance improves.|How do you check that a step runs at the source?~The color of the step~View Native Query is available~File size|1
+Reference vs Duplicate|Reference builds a new query on top of the original's output (it follows the original's changes). Duplicate copies all the steps separately.|You want the child query to change automatically when the original changes. Which one?~Reference~Duplicate~No difference|0
+Parameters|Changeable values (server, path, start date) you use in queries without editing code.|Your files move from a development path to production. How do you avoid editing every query?~A path parameter~Copy the queries~Ignore the problem|0
+Dataflows|Prepare data with Power Query Online in the service, so one cleaning process can feed many models.|Five reports need the same customer-table cleanup. Where do you clean it once?~Inside every report~In a Dataflow~In Excel|1
+Handling errors|Replace Errors swaps errors for a value. Keep Errors shows the bad rows so you can inspect them first.|⚖️ Before hiding errors, it is better to…~Inspect them with Keep Errors to learn the cause~Delete them without looking~Ignore them|0
+Privacy levels|Public, Organizational, and Private stop data from leaking from one source to another when you combine them.|You combine a sensitive salary table with a public source. Which level suits the salaries?~Public~Private~None needed|1
+Column from examples|Column From Examples: you type sample outputs and Power BI works out the rule itself.|You do not know the formula to pull the month out of a date text. Fastest route?~Column From Examples~Write it by hand~Delete the column|0`},
+{n:'Model the Data',w:'25–30%',d:'Design the model and relationships, write DAX, and tune performance.',t:`Star schema|A fact table in the middle (Sales) surrounded by dimension tables (Product, Customer, Date). It is the ideal design for Power BI.|Instead of one huge table with 80 columns, what is the best design?~Star schema~One table always~No relationships|0
+Facts and dimensions|Facts are numbers and events (quantity, amount). Dimensions are descriptions (product name, city).|🧩 Odd one out: which column is a "fact"?~Product name~Sale amount~Customer city|1
+Relationships|One-to-many: values are unique on the dimension side (1) and repeat on the fact side (*). Filters flow from dimensions to facts.|Which table should be the "one" side?~Products, with a unique key~Sales~Any table|0
+Many-to-many|Happens when the key is not unique on either side. It can give confusing results, so avoid it with a bridge table.|Cleanest fix for a many-to-many relationship?~A bridge table with unique values~Ignore it~Delete the table|0
+Filter direction|Single passes filters one way. Both passes them both ways, but it can cause ambiguity and slowness.|When should you hesitate before turning on Both?~It can cause ambiguity and slowness~It is forbidden~Nothing happens|0
+Inactive relationship|Two tables can have only one active relationship. Others stay inactive and are switched on inside a measure with USERELATIONSHIP.|Sales has an order date and a ship date, both linked to the same Date table. How many can be active?~One~Two~Unlimited|0
+Role-playing dimension|One Date table can play the role of order date and ship date, using active and inactive relationships.|Is one copy of the Date table enough to analyze both order and ship dates?~Yes, with an inactive relationship and USERELATIONSHIP~Never~Only with DirectQuery|0
+Date table|Needed for time intelligence. Create it with CALENDAR or CALENDARAUTO, then Mark as date table. Dates must be continuous with no gaps.|Time functions fail on a Date table that is missing days. Why?~They need continuous dates~They need internet~They need Premium|0
+Hiding fields|Hide technical columns (keys, helper columns) to simplify the field list for report builders.|Why hide the CustomerID key column?~It deletes the data~It reduces clutter for report builders~It speeds up the internet|1
+Column or measure|A calculated column is computed at refresh and stored for every row. A measure is computed at display time, based on the filter context.|Total profit must change with filters. What do you use?~A measure~A calculated column~A fixed value|0
+Row and filter context|Row context works row by row (calculated columns, iterators). Filter context comes from filters, visuals, and slicers.|🔎 Which context changes when you click a bar in a chart?~Filter context~Row context~No context|0
+CALCULATE|Changes the filter context: CALCULATE([Total Sales], Region[Name]="Gulf") computes sales for that region only.|Which function changes the filter for one measure?~CALCULATE~SUM~COUNT|0
+ALL|ALL removes filters, so it is used for a share of total: DIVIDE([Sales], CALCULATE([Sales], ALL(Product))).|The denominator of a "share of total" must…~Ignore the product filter~Respond to every filter~Equal zero|0
+SUMX|An iterator: it walks each row, evaluates an expression, then sums, for example SUMX(Sales, Sales[Qty]*Sales[Price]).|There is no "line total" column. How do you sum quantity × price?~SUMX~SUM alone~COUNT|0
+DIVIDE|DIVIDE divides safely. It returns BLANK or an alternate value on division by zero instead of an error.|Which is better when the denominator might be zero?~The / operator~DIVIDE~No difference|1
+Time intelligence|Functions such as TOTALYTD and SAMEPERIODLASTYEAR need a valid Date table.|To compare this month with the same month last year?~SAMEPERIODLASTYEAR~TOTALYTD~ALL|0
+VAR and RETURN|Store an intermediate result under a name. The code is clearer and the value is computed once.|What is the benefit of VAR?~Clearer code and less repetition~It deletes data~It hides a table|0
+Implicit or explicit|Implicit: you drag a numeric column and Power BI sums it. Explicit: a measure you write yourself, better for control and reuse.|You want the same sales measure in 20 visuals. Best choice?~An explicit measure~Drag the column each time~Excel|0
+Hierarchies|A hierarchy (Year > Quarter > Month) enables drill down in visuals.|What makes it easy to go from year down to month in a visual?~A hierarchy~Text values~A pie chart only|0
+Data categories|A data category such as City or Country helps map visuals place data correctly.|Why set the country column to Country?~So Power BI recognizes it in maps~To grow the file~For security|0
+Sort by column|Sort by column makes month names sort by month number instead of alphabetically.|Without this setting, with English names, which month appears first?~April~January~March|0
+Quick measures|Ready-made templates for common calculations (YTD, moving average) that generate DAX code.|An indirect benefit of Quick measures?~They show ready DAX code to learn from~They delete errors~They create reports|0
+Performance Analyzer|A Desktop tool that times every visual: DAX query, rendering, and more, so you can find slow spots.|A visual is slow. Where do you start diagnosing?~Performance Analyzer~Delete the report~Change the colors|0
+Reduce model size|Remove unneeded columns and lower cardinality (for example, split date from time) to compress and speed up the model.|Which column bloats the model most?~Very many unique values (minute by minute)~Few repeated values~No difference|0`},
+{n:'Visualize and Analyze',w:'25–30%',d:'Pick the right visuals and build interactive reports with smart analytics.',t:`Choosing a visual|Lines show trends over time, bars compare categories, and a card shows one key number.|You want monthly sales over two years. Best fit?~Line chart~Pie chart~Card|0
+Columns or bars|Horizontal bars suit long category names. Columns suit a few categories.|You have 15 long product names. Best choice?~Clustered bar (horizontal)~Pie~Gauge|0
+Pie chart caution|Pie charts make comparison hard with many slices. They suit simple shares of 2–5 parts.|⚖️ When is a pie chart acceptable?~12 similar slices~Up to 5 parts that clearly differ~Showing a time trend|1
+Card and KPI|A Card shows a single number. A KPI compares a value with a target and shows the trend.|You want sales against target, with a trend indicator. Best fit?~KPI~Table~Slicer|0
+Table and matrix|A Table is flat rows. A Matrix supports rows, columns, and hierarchies (like a PivotTable).|You want products in rows and months in columns. Best fit?~Matrix~Card~Pie|0
+Slicers|A slicer filters the page. Sync slicers carry the same selection across several pages.|You picked a region on page 1 and want it kept on page 2. The fix?~Sync slicers~Delete the page~Drillthrough|0
+Filter levels|A filter can apply to one visual, one page, or the whole report from the Filters pane.|A "Year = 2025" filter for every page of the report. Which level?~Visual level~Page level~Report level|2
+Drill down and drillthrough|Drill down goes to a finer level inside the same visual. Drillthrough jumps to a detail page and keeps the selected context.|🕵️ A manager clicks "Riyadh" and lands on a full detail page for Riyadh. Which feature?~Drillthrough~Sync slicers~Themes|0
+Custom tooltips|A report page tooltip shows a small page when you hover over a visual.|You want a mini chart to appear when hovering over a column. The fix?~Tooltip page~Bookmark~Slicer|0
+Bookmarks and buttons|Bookmarks save a view state (filters, hidden items). Buttons switch between them for interactive experiences.|Switch between profit and cost views with two buttons and no new page?~Bookmarks + Buttons~Merge~DirectQuery|0
+Conditional formatting|Color cells or bars by a value, a rule, or a measure.|You want a sales cell to turn red when it is below target. The tool?~Conditional formatting~Append~Unpivot|0
+Edit interactions|Controls whether one visual filters, highlights, or does not affect another.|You do not want the first chart to affect the second. What do you change?~Edit interactions~Table relationships~Page size|0
+Themes|A JSON file that unifies colors and fonts across reports for one visual identity.|To unify your company colors across 30 reports?~Import a Theme JSON~Color by hand~Change the screen|0
+Field parameters|Let users choose which field or measure a visual shows, through a slicer.|A user wants to switch between sales and profit in the same chart. What helps?~A field parameter~Delete the chart~Gateway|0
+Maps|Map, Filled map, and Shape map show geographic data and need correct data categories.|What improves map accuracy for city names?~Set Data category to City~Nothing~Use a Pie|0
+Decomposition tree|Breaks a number into factors step by step. You pick the branch yourself or use AI splits.|You want to break down a sales drop by region, then product, choosing each step yourself. Best fit?~Decomposition tree~Card~Gauge|0
+Key influencers|Analyzes which factors drive a given outcome, such as subscription cancellation.|🔎 Why do customers cancel? Which AI visual?~Key influencers~Slicer~Shape|0
+Q&A|Type a natural-language question such as "sales by country" and the visual is drawn for you.|You want users to ask text questions about the data. Which visual?~Q&A~Matrix~Treemap|0
+Smart narrative|Generates a dynamic text summary that changes with filters.|You want a sentence that summarizes the trend and updates with filtering?~Smart narrative~A fixed text box~Image|0
+Analytics pane|From the Analytics pane you add trend lines, forecasts, average and reference lines.|What do you add to forecast the coming months?~Forecast in the Analytics pane~Slicer~Theme|0
+Anomaly detection|In a line chart it highlights unusual points and suggests possible causes.|Sales jump unexpectedly on one day. What do you do?~Turn on Find anomalies~Delete the day~Recolor the chart|0
+Accessibility|Alt text, tab order, and color contrast make a report usable with screen readers and for everyone.|What helps a screen-reader user?~Alt text on visuals~More charts~Removing titles|0
+Mobile reports|Mobile layout view rearranges visuals for a vertical phone screen.|Most of your users are on phones. What do you design?~A mobile layout~A Dashboard only~Nothing|0
+Dashboard or report|A report has several interactive pages. A dashboard is one page in the service made of visuals pinned from several reports.|⚖️ One page that gathers pinned visuals from several reports?~Dashboard~Report~Neither|0`},
+{n:'Manage and Secure',w:'15–20%',d:'Publish, refresh, share, secure, and govern in the Power BI service.',t:`Workspaces|A workspace is a shared place in the service for reports, semantic models, and dashboards.|Where do your teams work on shared reports?~A workspace~Desktop only~Excel|0
+Workspace roles|Admin, Member, Contributor, and Viewer have graded permissions. Viewer is read-only.|Who can edit content but cannot manage members?~Contributor~Admin~Viewer|0
+Apps|Distribute polished content to consumers without giving them access to the workspace.|500 users need the final reports without editing rights. Best choice?~Publish an App~Make them Admin~Send pbix files|0
+Share or app|Direct sharing is quick for a single item. An app is better for organized delivery of a set of reports.|To send one report to a colleague quickly?~Share~App~Pipeline|0
+Semantic model|Semantic model is the current name for dataset: the data, relationships, and measures behind reports.|What is the modern name for Dataset?~Semantic model~Dataflow~Gateway|0
+Scheduled refresh|Scheduled refresh updates Import data. The daily limit is up to 8 times in Pro and 48 in Premium.|What is the maximum number of scheduled refreshes per day in Pro?~8~48~100|0
+Gateway|A secure bridge that lets the cloud service refresh on-premises sources.|Your SQL source is inside the company network and you want scheduled refresh in the service?~On-premises data gateway~Nothing is needed~DirectQuery only|0
+Incremental refresh|Refreshes only the recent part of large data and keeps the old part without reloading it.|A 5-year table changes only in its last few days. Smartest approach?~Incremental refresh~Refresh everything every time~Delete the old data|0
+Static RLS|Row-level security limits rows by role with a DAX filter such as [Region] = "Gulf".|Does the Gulf manager see Europe rows?~No, if the Gulf role is applied~Yes, always~Nothing changes|0
+Dynamic RLS|One role with a USERPRINCIPALNAME() filter that matches the user's email against a permissions table.|Instead of 50 roles for 50 managers?~One dynamic role using USERPRINCIPALNAME~50 reports~Export|0
+View as|Test a role in Desktop or the service before publishing to see what the user sees.|Before publishing RLS, how do you check it?~View as role~Guess~Delete the role|0
+The RLS trap|RLS is not applied to people with the Admin, Member, or Contributor role in the workspace. It applies to Viewers.|🕵️ A team lead (Member) sees all data despite RLS. Why?~Their workspace role bypasses RLS~A DAX bug~The internet|0
+OLS|Object-level security hides a whole table or column (such as salary) from a role.|You want to hide the Salary column itself, not rows. Which one?~OLS~RLS~Slicer|0
+Sensitivity labels|A sensitivity classification (Confidential, Public) follows the content and applies Microsoft Purview protection policies.|You want to mark a report "Confidential" and have it follow exports?~Sensitivity label~Theme~Bookmark|0
+Endorsement|Promoted and Certified mark trusted content. Certified requires authorized reviewers.|Content officially approved by designated reviewers?~Certified~Promoted alone~Hidden|0
+Lineage view|Shows the chain: source > Dataflow > model > report, and reveals the impact of a change.|Before changing a model, how do you find the reports it affects?~Lineage view and Impact analysis~Guess~Delete it|0
+Deployment pipelines|Promote content between Development, Test, and Production safely.|How do you move your changes to Test and then to Production?~A deployment pipeline~Copy and paste~Email|0
+Subscriptions|Subscriptions email a snapshot of a report on a schedule.|A manager wants a snapshot by email every morning?~Subscription~Gateway~Merge|0
+Data alerts|Data alerts on cards and gauges pinned to a dashboard send a notification when a threshold is crossed.|An alert when sales fall below a limit. Where?~A dashboard tile~Power Query~Theme|0
+Licenses|Free, Pro, Premium Per User, and Fabric/Premium capacities differ in sharing and refresh limits.|Sharing reports with others usually requires?~A suitable license (Pro, PPU, or capacity)~Nothing~Excel|0
+Usage metrics|A usage report shows who opens your reports and how often.|How do you know a report is not being used?~Usage metrics~Trial and error~Guessing|0
+pbit templates|A .pbit template keeps the structure and queries without the data and prompts for parameters on open.|You want a template to give your team with no data inside?~pbit~pbix~csv|0
+Analyze in Excel|Connects to a semantic model in the service so you can build PivotTables in Excel.|An accountant loves Excel and wants to use your model?~Analyze in Excel~Import CSV~Ignore it|0
+Git and Fabric|Git integration tracks versions. Microsoft Fabric is a unified data platform that includes Power BI.|To track report versions the way developers do?~Git integration~Gateway~Dashboard|0`}
+])};
+const S={
+en:{brand:'Power BI Academy',home:'🏠 Home',exam:'🏆 Final Exam',idea:'💡 The idea, simply',tag:(m,n,i,k)=>`Part ${m}: ${n} · Lesson ${i} of ${k}`,prev:'← Previous',next:'Next →',ok:'✔ Correct. Well done!',bad:'✘ The correct answer is highlighted. Re-read the explanation above.',lg:'عربي',pdf:'⬇ PDF',foot:'A learning reference based on the PL-300 skill areas in Microsoft Learn. For study and revision; check the official documentation for updates.',h1:'Learn Power BI, step by step',intro:n=>`An interactive reference covering the four skill areas of the Microsoft Learn PL-300 path: ${n} short lessons. Each has a simple explanation and one practical challenge. Use the tabs at the top, and finish with a random final exam.`,how:'How to use it',howt:'Read the idea, then answer before you scroll on. A wrong answer shows the right one right away. Use the language and theme buttons at the top. The PDF button prints a full copy in the current language: choose "Save as PDF".',w:'Exam weight',cert:'Power BI Data Analyst certification page on Microsoft Learn',share:'Share on LinkedIn',et:'🏆 Final Exam',ei:'10 random questions from all four parts. Questions and option order change on every attempt.',sc:'Score',ex:'🌟 Excellent',gd:'👍 Good',rv:'📚 Review the lessons and try again',ne:'New exam',q:'Question',a:'Answer',pt:'Part'},
+ar:{brand:'أكاديمية Power BI',home:'🏠 الرئيسية',exam:'🏆 الاختبار الشامل',idea:'💡 الفكرة ببساطة',tag:(m,n,i,k)=>`الجزء ${m}: ${n} · الدرس ${i} من ${k}`,prev:'→ السابق',next:'التالي ←',ok:'✔ إجابة صحيحة، أحسنت!',bad:'✘ الإجابة الصحيحة مظللة. أعد قراءة الشرح أعلاه.',lg:'EN',pdf:'⬇ PDF',foot:'مرجع تعليمي مبني على مجالات اختبار PL-300 في Microsoft Learn. للتعلم والمراجعة، ويُنصح بمراجعة الوثائق الرسمية للتحديثات.',h1:'تعلّم Power BI خطوة بخطوة',intro:n=>`مرجع تفاعلي يغطي المجالات الأربعة لمسار PL-300 في Microsoft Learn: ${n} درساً قصيراً. لكل درس شرح مبسّط وتحدٍّ عملي واحد. تنقّل بالتبويبات في الأعلى، واختم باختبار شامل عشوائي.`,how:'كيف تستفيد؟',howt:'اقرأ الفكرة ثم أجب قبل أن تتابع. الإجابة الخاطئة تُظهر الصحيحة فوراً. استخدم زرّي اللغة والمظهر في الأعلى. زر PDF يطبع نسخة كاملة بلغة الواجهة الحالية: اختر «حفظ كـ PDF».',w:'وزنه في الاختبار',cert:'صفحة شهادة Power BI Data Analyst على Microsoft Learn',share:'شارك على LinkedIn',et:'🏆 الاختبار الشامل',ei:'10 أسئلة عشوائية من الأجزاء الأربعة. تتغير الأسئلة وترتيب الخيارات في كل محاولة.',sc:'النتيجة',ex:'🌟 ممتاز',gd:'👍 جيد',rv:'📚 راجع الدروس وأعد المحاولة',ne:'اختبار جديد',q:'سؤال',a:'الإجابة',pt:'الجزء'}};
+let L,TH;try{L=localStorage.getItem('pbl');TH=localStorage.getItem('pbt')}catch(e){}
+if(L!='ar'&&L!='en')L=/^ar/i.test(navigator.language||'')?'ar':'en';
+const $=s=>document.querySelector(s),box=$('#box'),main=$('#main'),sub=$('#sub'),done={},R=document.documentElement;
+const P=()=>D[L],U=()=>S[L],N=D.en.reduce((s,p)=>s+p.t.length,0);let m=0,s=0;
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const save=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+function qb(t,cb){const u=U(),d=document.createElement('div');d.className='q';d.innerHTML=`<b>🎯 ${t.q}</b>`;const fb=document.createElement('div');fb.className='fb';
+ sh(t.o.map((x,i)=>({x,i}))).forEach(({x,i})=>{const b=document.createElement('button');b.className='o';b.textContent=x;b.onclick=()=>{if(d.dataset.a)return;d.dataset.a=1;const r=i==t.c;d.querySelectorAll('button').forEach(k=>{k.disabled=true;if(k.textContent==t.o[t.c])k.classList.add('ok')});if(!r)b.classList.add('no');fb.textContent=r?u.ok:u.bad;cb&&cb(r)};d.append(b)});d.append(fb);return d}
+const upd=()=>{$('#prog').textContent=`${Object.keys(done).length} / ${N}`};
+function tabs(){const u=U(),p=P();main.innerHTML='';[u.home,...p.map((x,i)=>`${i+1}. ${x.n}`),u.exam].forEach((n,i)=>{const b=document.createElement('button');b.textContent=n;b.className=i==m?'on':'';b.onclick=()=>go(i,0);main.append(b)});
+ sub.innerHTML='';sub.hidden=m<1||m>p.length;if(!sub.hidden)p[m-1].t.forEach((t,i)=>{const b=document.createElement('button');b.textContent=`${i+1}. ${t.h}`;b.className=(i==s?'on ':'')+(done[m+'-'+i]!=null?'done':'');b.onclick=()=>go(m,i);sub.append(b)});
+ const a=document.querySelector('.strip .on');a&&a.scrollIntoView({inline:'center',block:'nearest'})}
+function go(a,b,keep){m=a;s=b;tabs();box.innerHTML='';if(!keep)scrollTo(0,0);upd();const u=U(),p=P();
+ if(m==0)return home();if(m>p.length)return exam();
+ const q=p[m-1],t=q.t[s],e=document.createElement('div');
+ e.innerHTML=`<span class="tag">${u.tag(m,q.n,s+1,q.t.length)}</span><h2>${t.h}</h2><div class="bar"><i style="width:${(s+1)/q.t.length*100}%"></i></div><div class="card"><b>${u.idea}</b><p style="margin:6px 0 0">${t.x}</p></div>`;
+ e.append(qb(t,r=>{done[m+'-'+s]=r;upd();tabs()}));
+ const pg=document.createElement('div');pg.className='pager';
+ pg.innerHTML=`<button class="btn g" ${s==0&&m==1?'disabled':''} id="pv">${u.prev}</button><button class="btn" id="nx">${u.next}</button>`;e.append(pg);box.append(e);
+ $('#pv').onclick=()=>s>0?go(m,s-1):go(m-1,p[m-2].t.length-1);
+ $('#nx').onclick=()=>s<q.t.length-1?go(m,s+1):go(m+1,0)}
+function home(){const u=U();box.innerHTML=`<h1>${u.h1}</h1><p>${u.intro(N)}</p><div class="grid" id="g"></div><div class="card"><b>${u.how}</b><p style="margin:6px 0 0">${u.howt}</p></div><p><a class="btn" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(location.href)}">${u.share}</a></p><p><a href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/" target="_blank" rel="noopener" style="color:var(--b)">${u.cert}</a></p>`;
+ P().forEach((p,i)=>{const b=document.createElement('button');b.className='pc';b.innerHTML=`<b>${i+1}. ${p.n}</b><span>${u.w}: ${p.w}<br>${p.d||''}</span>`;b.onclick=()=>go(i+1,0);$('#g').append(b)})}
+function exam(){const u=U();let sc=0,n=0;const q=sh(P().flatMap(p=>p.t)).slice(0,10);
+ box.innerHTML=`<h1>${u.et}</h1><p>${u.ei}</p><div class="res" id="rs">${u.sc}: 0 / 10</div>`;
+ q.forEach(t=>box.append(qb(t,r=>{n++;if(r)sc++;$('#rs').textContent=`${u.sc}: ${sc} / 10`+(n==10?' '+(sc>=8?u.ex:sc>=5?u.gd:u.rv):'')})));
+ const r=document.createElement('button');r.className='btn';r.textContent=u.ne;r.onclick=exam;box.append(r)}
+function prt(){const u=U();$('#pr').innerHTML=`<h1>${u.brand}</h1>`+P().map((p,i)=>`<div class="pt">${u.pt} ${i+1}: ${p.n}</div>`+p.t.map((t,j)=>`<div class="pi"><h3>${j+1}. ${t.h}</h3><p>${t.x}</p><p><b>${u.q}:</b> ${t.q}</p><ol>${t.o.map(o=>`<li>${o}</li>`).join('')}</ol><p><b>${u.a}:</b> ${t.o[t.c]}</p></div>`).join('')).join('')}
+function setL(l,first){L=l;save('pbl',l);const u=U();R.lang=l;R.dir=l=='ar'?'rtl':'ltr';document.title=u.brand;$('#brand').textContent=u.brand;$('#foot').textContent=u.foot;$('#lg').textContent=u.lg;$('#pdf').textContent=u.pdf;go(m,s,!first)}
+function setT(t){R.dataset.theme=t;save('pbt',t)}
+$('#lg').onclick=()=>setL(L=='ar'?'en':'ar');
+$('#th').onclick=()=>{const d=matchMedia('(prefers-color-scheme:dark)').matches;setT((R.dataset.theme||(d?'dark':'light'))=='dark'?'light':'dark')};
+$('#pdf').onclick=()=>{prt();print()};addEventListener('beforeprint',prt);
+if(TH=='dark'||TH=='light')R.dataset.theme=TH;
+setL(L,true);
+</script>
+</body>
+</html>
